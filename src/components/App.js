@@ -1,13 +1,19 @@
-
 import React from "react";
-import './../styles/App.css';
+import Navbar from "./navbar";
+import Home from "./home";
+import { Route, Switch } from "react-router-dom";
+import About from "./about";
 
-const App = () => {
+function App() {
   return (
     <div>
-        {/* Do not remove the main div */}
+       <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
